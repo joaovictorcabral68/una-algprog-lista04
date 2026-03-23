@@ -1,140 +1,159 @@
-# Lista 04
+# Lista 02 - Java
 ## Introdução ao Java
 >Depois que coloquei em pratica a lógica de programação no portugol, agora fiz os seguintes exercícios no Java:
-- **Validador de Maioridade:** Objetivo era criar um programa para ler a idade do usúario, se for maior de 18 o programa indica acesso liberado se não acesso negado.
-- **O Radar de Velocidade:** O objetivo era criar um programa para ler a velocidade de carro e se passasse de 80 km é para cobrar 7 reais por KM ultrapassado, se não passar dos 80 km o programa indica Boa Viagem!.
-- **Sistema de Aprovação Escolar:** O objetivo era criar um programa que faz a leitura de duas notas e calcula a média no final.
-- **Par ou Ímpar:** O objetivo era criar um programa que faz a leitura de um número e informa para o usúario se é par ou ìmpar.
-- **Analisador de Triângulos:** O objetivo era criar um programa que faz a leitura de três valores (lados de um triângulo). Primeiro, verifique se eles podem formar um triângulo (a soma de dois lados deve ser sempre maior que o terceiro). Se sim, classifique em: - Equilátero: Todos os lados iguais. - Isósceles: Dois lados iguais. - Escaleno: Todos os lados diferentes.
+- **Mensagem de número:** Solicita um número e o exibe no console
+- **Operações basicas:** Pede dois números e mostra a soma, subtração e multiplicação.
+- **Média bimestral:** Calcula a média a partir de 4 notas informadas.
+- **Cálculo combustivel:** Calcula o valor total pago com base no preço do litro e quantidade vendida.
+- **Eurotrip:** Calcula o custo total de uma viagem para três destinos (Alemanha, Portugal e Itália) considerando o preço por destino e a quantidade de pessoas.
 
 >Para a resolução dessas atividades usei a estrutura `if/else` no java
 
 ---
 
 ## Programa
-### Validador de Maioridade:
+### Mensagem de número:
 ```Java
 import java.util.Scanner;
 
-public class Validadordeidade{
-public static void main(String[] args){
-    Scanner sc = new Scanner(System.in);
-    
-    int idade;
+public class Exercicio1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-    System.out.println("Digite sua idade");
-    idade=sc.nextInt();
+        System.out.print("Digite um número: ");
+        int number = scanner.nextInt();
 
-    if(idade>=18){
-        System.out.println("Acesso Permitido");
-}else{
-    System.out.println("Acesso negado");
-}
+        System.out.println("Número digito foi: " + number);
 
-
-}
+        scanner.close();
+    }
 }
 ```
 ---
-### O Radar de Velocidade:
+### Operações basicas:
 ```Java
 import java.util.Scanner;
-public class Radar {
 
-public static void main(String[] args){
-Scanner sc = new Scanner(System.in);
-int velocidade;
-int limite=80;
-int multa;
-System.out.println("Qual a velocidade do veiculo?:");
-velocidade = sc.nextInt();
-if(velocidade>limite){
-    multa=(velocidade-limite) * 7;
-    System.out.println("O valor da multa que deve ser paga é de:" + multa +"$");
-    
-}else{
-    System.out.println("Boa viagem!");
-}
- }
+public class Exercicio2 {
+    public static void main(String[] args) {
 
- }
-```
----
+        
+        Scanner scanner = new Scanner(System.in);
 
-### Sistema de Aprovação Escolar:
-```Java
-import java.util.Scanner;
-public class aprovacaoescolar{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        double nota1;
-        double nota2;
-        double media;
-        System.out.println("Digite uma nota:");
-        nota1 = sc.nextDouble();
-           System.out.println("Digite outra nota:");
-           nota2 = sc.nextDouble();
-          media=(nota1+nota2)/2;
-              System.out.println("A média do aluno foi:" + media);
+        System.out.println("Digite um número: ");
+        int number1 = scanner.nextInt();
 
+        System.out.println("Digite outro número: ");
+        int number2 = scanner.nextInt();
+
+        System.out.println("Soma: " + (number1 + number2));
+        System.out.println("Divisão: " + (number1 - number2));
+        System.out.println("Multiplicação: " + (number1 / number2));
+
+
+        scanner.close();
 
     }
 }
 ```
 ---
-### Par ou Ímpar:
+
+### Média bimestral:
 ```Java
 import java.util.Scanner;
-public class parouimpar{
-    public static void main(String[] args){
-        Scanner sc= new Scanner(System.in);
-        int num;
-         System.out.println("Digite um numero:");
-         num=sc.nextInt();
-         if(num %2==0){
-         System.out.println("Par");
-         }else{
-            System.out.println("Impar");
-         }
-    
- }
-}
 
+public class Exercicio3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double media;
+
+        System.out.println("Digite sua nota do 1º bimestre: ");
+        double nota1 = scanner.nextDouble();
+
+        System.out.println("Digite sua nota do 2º bimestre: ");
+        double nota2 = scanner.nextDouble();
+
+        System.out.println("Digite sua nota do 3º bimestre: ");
+        double nota3 = scanner.nextDouble();
+
+        System.out.println("Digite sua nota do 4º bimestre: ");
+        double nota4 = scanner.nextDouble();
+
+        media = ((nota1 + nota2 + nota3 + nota4) / 4);
+        
+        System.out.println("A média das suas notas é: " + media);
+
+        scanner.close();
+    }
+}
 ```
 ---
-### Analisador de Triângulos:
+### Cálculo combustivel:
+```Java
+import java.util.Scanner;
+
+public class Exercicio4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double precoGasolina;
+        double litrosComprados;
+        double valorTotal;
+
+        System.out.println("Digite o preço da gasolina: ");
+        precoGasolina = scanner.nextDouble();
+        
+        System.out.println("Digite o números de litros: ");
+        litrosComprados = scanner.nextDouble();
+        
+        valorTotal = precoGasolina * litrosComprados;
+        System.out.println("Valor total: R$" + valorTotal);
+
+        scanner.close();
+    }
+}
+```
+---
+### Eurotrip:
 
 ```Java
 import java.util.Scanner;
 
-public class triangulos{                                                            
+public class Exercicio5 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int qtdPessoasAlemanha;
+        double precoAlemanha;
 
-      
-        System.out.println("Digite o primeiro lado do triangulo:");
-        double a = sc.nextDouble();
+        int qtdPessoasPortugal;
+        double precoPortugal;
 
-        System.out.println("Digite o segundo lado do triangulo:");
-        double b = sc.nextDouble();
+        int qtdPessoasItalia;
+        double precoItalia;
 
-        System.out.println("Digite o terceiro lado do triangulo:");
-        double c = sc.nextDouble();
+        System.out.println("Digite o valor da viagem para Alemanha: ");
+        precoAlemanha = scanner.nextDouble();
 
-        if (a + b > c && a + c > b && b + c > a) {
-            // Classificação
-            if (a == b && b == c) {
-                System.out.println("Triangulo Equilatero");
-            } else if (a == b || b == c || a == c) {
-                System.out.println("Triângulo Isosceles");
-            } else {
-                System.out.println("Triangulo Escaleno");
-            }
-        } else {
-            System.out.println("Os valores nao formam um triangulo");
-        }
+        System.out.println("Digite a quantidade de pessoas que vão para a viagem para Alemanha: ");
+        qtdPessoasAlemanha = scanner.nextInt();
 
-        sc.close();
+        System.out.println("Digite o valor da viagem para Portugal: ");
+        precoPortugal = scanner.nextDouble();
+
+        System.out.println("Digite a quantidade de pessoas que vão para a viagem para Portugal: ");
+        qtdPessoasPortugal = scanner.nextInt();
+
+        System.out.println("Digite o valor da viagem para Italia: ");
+        precoItalia = scanner.nextDouble();
+
+        System.out.println("Digite a quantidade de pessoas que vão para a viagem para Italia: ");
+        qtdPessoasItalia = scanner.nextInt();
+
+        System.out.println("Valor total (Viagem Alemanha): R$" + (qtdPessoasAlemanha * precoAlemanha));
+        System.out.println("Valor total (Viagem Portugal): R$" + (qtdPessoasPortugal * precoPortugal));
+        System.out.println("Valor total (Viagem Italia): R$" + (qtdPessoasItalia * precoItalia));
+        System.out.println("Valor total (Eurotrip): R$" + ((qtdPessoasAlemanha * precoAlemanha) + (qtdPessoasPortugal * precoPortugal) + ((qtdPessoasItalia * precoItalia))));
+
+        scanner.close();
     }
 }
 ```
